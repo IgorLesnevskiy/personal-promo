@@ -1,0 +1,50 @@
+.promo-wrapper {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+
+	&__content {
+		lost-column: 6/12;
+	}
+
+	&__hero {
+		lost-column: 6/12;
+
+		.promo-hero {
+			margin: 0 auto;
+		}
+	}
+}
+
+.promo-hero {
+	width: 40rem;
+	height: 40rem;
+	border: 20px solid rgba(0, 0, 0, 0.8);
+	border-radius: 50%;
+
+	&__image {
+		border-radius: 50%;
+		border: 20px solid rgba(0, 0, 0, 0.7);
+	}
+}
+
+.promo-content {
+	&__label {
+		margin-bottom: 1.6rem;
+	}
+
+	&__name {
+		margin-bottom: 1rem;
+	}
+
+	&__post {
+		margin-bottom: 3rem;
+	}
+
+	&__contacts {
+		.list__item {
+			font-weight: 300;
+		}
+	}
+}

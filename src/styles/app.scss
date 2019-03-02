@@ -1,6 +1,12 @@
 // MCSS http://operatino.github.io/MCSS/
 // BEM https://ru.bem.info/
 
+//TODO seo
+//TODO подключить метрику
+//TODO иконки для иконочного шрифта
+//TODO адаптив
+//TODO фавикон
+
 /* Start
 ---------------------------------------------------------------------------------- */
 @import "start/start";
@@ -9,7 +15,9 @@
 
 /* Base
 ---------------------------------------------------------------------------------- */
-@import "base/typography";
+@import "base/headings";
+@import "base/label";
+@import "base/list";
 
 /* /Base */
 
@@ -22,9 +30,8 @@
 ---------------------------------------------------------------------------------- */
 
 @import "project/floor";
-@import "project/header";
-@import "project/footer";
 @import "project/page";
+@import "project/promo";
 
 /* /Project */
 

@@ -14,7 +14,7 @@ $base-font-family: "Roboto", Helvetica, sans-serif;
 $alt-font-family: "Roboto", Helvetica, sans-serif;
 
 $base-line-height: 1.3;
-$base-font-size: 14px;
+$base-font-size: 10px;
 $base-font-color: $color--mine-shaft;
 
 html {
@@ -28,6 +28,7 @@ body {
 	background: #fff;
 	backface-visibility: hidden;
 	line-height: $base-line-height;
+	font-size: 1.4rem;
 }
 
 *,
@@ -38,11 +39,11 @@ body {
 
 a {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 	transition: all 0.2s linear;
 
 	&:hover {
-		color: #a22f30;
+		color: #fff;
 		text-decoration: underline;
 	}
 
@@ -68,6 +69,15 @@ img {
 	}
 }
 
-.webfont-icon--shopping-cart {
-	font-size: 1.2em;
+.text-with-icon {
+	display: inline-flex;
+	align-items: center;
+
+	.webfont-icon:first-child {
+		margin-right: 1rem;
+	}
+
+	.webfont-icon:last-child {
+		margin-left: 1rem;
+	}
 }
