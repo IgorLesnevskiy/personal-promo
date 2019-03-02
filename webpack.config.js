@@ -90,7 +90,7 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /(node_modules)/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    (config.options.production) ? MiniCssExtractPlugin.loader : 'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -117,11 +117,12 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
-                use: ['html-loader?attrs=false', 'pug-html-loader']
+                use: ['pug-loader']
             }
         ],
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({}),
         // Хак, необходимый для корректной работы конструкции catch в промисах
         new webpack.DefinePlugin({
@@ -157,8 +158,10 @@ module.exports = {
         }
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
+        contentBase: [
+            ...pugPages.map((page) => `${config.paths.src.templatesPages}/${page}`)
+        ],
+        watchContentBase: true,
         port: 9000,
         hot: true,
         open: true

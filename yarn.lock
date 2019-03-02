@@ -5208,6 +5208,14 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lost@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/lost/-/lost-8.3.1.tgz#9fc6cbfff831264466cc30ab8fba5741945add7a"
+  integrity sha512-J+TgSVo9VVf4Y9lVGaI5DMN0BMqQTIabEJuEQGlK4vte+EZq9eDcvwGx9DfrkCUMqs0CvzAPE5dsnj18Zbjf6g==
+  dependencies:
+    object-assign "^4.1.1"
+    postcss "7.0.14"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -6765,7 +6773,7 @@ postcss-value-parser@^3.0.0, postcss-value-parser@^3.3.0, postcss-value-parser@^
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
   integrity sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.13, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
+postcss@7.0.14, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.13, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
   version "7.0.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
   integrity sha512-NsbD6XUUMZvBxtQAJuWDJeeC4QFsmWsfozWxCJPWf3M55K9iu2iMDaKqyoOdTJ1R4usBXuxlVFAIo8rZPQD4Bg==
@@ -6933,6 +6941,15 @@ pug-load@^2.0.11:
     object-assign "^4.1.0"
     pug-walk "^1.1.7"
 
+pug-loader@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/pug-loader/-/pug-loader-2.4.0.tgz#18eebdda045d9c31c2856f1cc3ceb8d3df7ca49a"
+  integrity sha512-cD4bU2wmkZ1EEVyu0IfKOsh1F26KPva5oglO1Doc3knx8VpBIXmFHw16k9sITYIjQMCnRv1vb4vfQgy7VdR6eg==
+  dependencies:
+    loader-utils "^1.1.0"
+    pug-walk "^1.0.0"
+    resolve "^1.1.7"
+
 pug-parser@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/pug-parser/-/pug-parser-5.0.0.tgz#e394ad9b3fca93123940aff885c06e44ab7e68e4"
@@ -6953,7 +6970,7 @@ pug-strip-comments@^1.0.3:
   dependencies:
     pug-error "^1.3.2"
 
-pug-walk@^1.1.7:
+pug-walk@^1.0.0, pug-walk@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/pug-walk/-/pug-walk-1.1.7.tgz#c00d5c5128bac5806bec15d2b7e7cdabe42531f3"
   integrity sha1-wA1cUSi6xYBr7BXSt+fNq+QlMfM=
@@ -7071,6 +7088,14 @@ raw-body@2.3.3:
     http-errors "1.6.3"
     iconv-lite "0.4.23"
     unpipe "1.0.0"
+
+raw-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-1.0.0.tgz#3f9889e73dadbda9a424bce79809b4133ad46405"
+  integrity sha512-Uqy5AqELpytJTRxYT4fhltcKPj0TyaEpzJDcGz7DFJi+pQOOi3GjR/DOdxTkTsF+NzhnldIoG6TORaBlInUuqA==
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^1.0.0"
 
 rc@^1.2.7:
   version "1.2.8"
@@ -7492,7 +7517,7 @@ resolve-url@^0.2.1:
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
-resolve@^1.1.6, resolve@^1.10.0, resolve@^1.3.2:
+resolve@^1.1.6, resolve@^1.1.7, resolve@^1.10.0, resolve@^1.3.2:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
   integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
@@ -8206,6 +8231,11 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
+
+stylelint-config-lost@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/stylelint-config-lost/-/stylelint-config-lost-0.0.3.tgz#eaea4cb077b5ca9e98c1e5234ae3e4920958279b"
+  integrity sha1-6upMsHe1yp6YweUjSuPkkglYJ5s=
 
 stylelint-config-recommended@^2.1.0:
   version "2.1.0"
