@@ -13,8 +13,7 @@
     "IE 11"
   ],
   "dependencies": {
-    "modernizr": "^3.6.0",
-    "raw-loader": "^1.0.0"
+    "modernizr": "^3.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
