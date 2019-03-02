@@ -1,0 +1,73 @@
+/* Default
+-------------------------------------------------- */
+@import "mixines/include";
+//@import "compass/utilities/general/clearfix";
+
+@import "colors";
+@import "vars";
+@import "grid";
+@import "rreset";
+@import "fonts";
+@import "webfont";
+
+$base-font-family: "Roboto", Helvetica, sans-serif;
+$alt-font-family: "Roboto", Helvetica, sans-serif;
+
+$base-line-height: 1.3;
+$base-font-size: 14px;
+$base-font-color: $color--mine-shaft;
+
+html {
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	color: $base-font-color;
+	font-weight: 400;
+}
+
+body {
+	background: #fff;
+	backface-visibility: hidden;
+	line-height: $base-line-height;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	transition: all 0.2s linear;
+
+	&:hover {
+		color: #a22f30;
+		text-decoration: underline;
+	}
+
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+img {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	//flexbox hack for IE
+	min-height: 1px;
+}
+
+//flexbox hack for IE
+[class^="col-"] {
+	& > * {
+		min-height: 1px;
+	}
+}
+
+.webfont-icon--shopping-cart {
+	font-size: 1.2em;
+}

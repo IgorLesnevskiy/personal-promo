@@ -1,0 +1,17 @@
+//Переменные
+
+$site-max-width: 1140px;
+$site-min-width: 320px;
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 720px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1240px;
+
+$breakpoint-tiny: 320px;
+$breakpoint-small: $breakpoint-xs;
+$breakpoint-mobile: $breakpoint-sm;
+$breakpoint-tablet: $breakpoint-md;
+$breakpoint-desktop: $breakpoint-lg;
+
+$base--text-color: #000;

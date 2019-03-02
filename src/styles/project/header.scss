@@ -1,0 +1,17 @@
+/* Project: header
+ * Шапка сайта
+-------------------------------------------------- */
+.header {
+	height: 100px;
+	border-bottom: 1px solid #000;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		flex-grow: 0;
+		flex-shrink: 1;
+	}
+}
+/* /Project: header */

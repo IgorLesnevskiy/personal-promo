@@ -1,0 +1,50 @@
+$iconFontName: 'webfont';
+
+@font-face {
+	font-family: $iconFontName;
+	src: url('/fonts/webfont/webfont.woff') format('woff'),
+	url('/fonts/webfont/webfont.woff2') format('woff2')
+}
+
+@mixin webfont-icon($icon-code, $after-or-before: 'before') {
+	&:#{$after-or-before} {
+		content: #{'"\\' + $icon-code + '"'};
+		display: inline-block;
+		font-family: $iconFontName;
+		font-style: normal;
+		line-height: 1;
+		color: currentColor;
+		-webkit-font-smoothing: antialiased;
+		speak: none;
+	}
+}
+
+$webfont-icon--social--fb: "\f101";
+$webfont-icon--social--ok: "\f102";
+$webfont-icon--social--twitter: "\f103";
+$webfont-icon--social--vk: "\f104";
+
+
+.webfont-icon {
+	font-family: $iconFontName;
+	display: inline-block;
+	vertical-align: middle;
+	font-style: normal;
+	speak: none;
+	color: currentColor;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.webfont-icon--social--fb:before {
+   content: "\f101";
+}
+.webfont-icon--social--ok:before {
+   content: "\f102";
+}
+.webfont-icon--social--twitter:before {
+   content: "\f103";
+}
+.webfont-icon--social--vk:before {
+   content: "\f104";
+}

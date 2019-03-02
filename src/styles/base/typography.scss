@@ -1,0 +1,15 @@
+/* Base: typography.scss
+ * Типографика
+-------------------------------------------------- */
+
+.content-area {
+	& > * + * {
+		margin-top: 1em;
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+}
+
+/* /Base: typography.scss */
