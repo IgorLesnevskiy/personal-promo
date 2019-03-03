@@ -19,10 +19,11 @@ $iconFontName: 'webfont';
 	}
 }
 
-$webfont-icon--social--fb: "\f101";
-$webfont-icon--social--ok: "\f102";
-$webfont-icon--social--twitter: "\f103";
-$webfont-icon--social--vk: "\f104";
+$webfont-icon--close-envelope: "\f101";
+$webfont-icon--pointer: "\f102";
+$webfont-icon--social--fb: "\f103";
+$webfont-icon--social--github: "\f104";
+$webfont-icon--social--medium: "\f105";
 
 
 .webfont-icon {
@@ -36,15 +37,18 @@ $webfont-icon--social--vk: "\f104";
 	-webkit-font-smoothing: antialiased;
 }
 
-.webfont-icon--social--fb:before {
+.webfont-icon--close-envelope:before {
    content: "\f101";
 }
-.webfont-icon--social--ok:before {
+.webfont-icon--pointer:before {
    content: "\f102";
 }
-.webfont-icon--social--twitter:before {
+.webfont-icon--social--fb:before {
    content: "\f103";
 }
-.webfont-icon--social--vk:before {
+.webfont-icon--social--github:before {
    content: "\f104";
+}
+.webfont-icon--social--medium:before {
+   content: "\f105";
 }

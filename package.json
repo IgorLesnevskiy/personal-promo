@@ -5,7 +5,7 @@
     "csslint": "stylelint src/styles/base src/styles/cosmetic src/styles/project src/styles/start/start.scss src/styles/app.scss --fix",
     "generateWebfont": "node bin/generateWebfont.js",
     "jslint": "eslint ./src/js/app.js --fix",
-    "precommit": "yarn jslint",
+    "precommit": "yarn jslint && yarn csslint",
     "watch": "yarn generateWebfont && cross-env NODE_ENV=development webpack-dev-server"
   },
   "browserslist": [

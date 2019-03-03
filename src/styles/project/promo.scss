@@ -1,15 +1,28 @@
 .promo-wrapper {
 	display: flex;
 	align-items: center;
-
 	width: 100%;
+
+	@media (max-width: 978px) {
+		flex-direction: column-reverse;
+	}
 
 	&__content {
 		lost-column: 6/12;
+
+		@media (max-width: 978px) {
+			lost-column: 12/12;
+			text-align: center;
+		}
 	}
 
 	&__hero {
 		lost-column: 6/12;
+
+		@media (max-width: 978px) {
+			lost-column: 12/12;
+			margin-bottom: 3rem;
+		}
 
 		.promo-hero {
 			margin: 0 auto;
@@ -20,12 +33,12 @@
 .promo-hero {
 	width: 40rem;
 	height: 40rem;
-	border: 20px solid rgba(0, 0, 0, 0.8);
+	border: 10px solid rgba(0, 0, 0, 0.8);
 	border-radius: 50%;
 
 	&__image {
 		border-radius: 50%;
-		border: 20px solid rgba(0, 0, 0, 0.7);
+		border: 10px solid rgba(0, 0, 0, 0.7);
 	}
 }
 
