@@ -10,12 +10,20 @@
 @import "fonts";
 @import "webfont";
 
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-xs: 0;
+
 $base-font-family: "Roboto", Helvetica, sans-serif;
 $alt-font-family: "Roboto", Helvetica, sans-serif;
 
 $base-line-height: 1.3;
 $base-font-size: 10px;
 $base-font-color: $color--mine-shaft;
+
+$animation-speed: 0.2s;
 
 html {
 	font-family: $base-font-family;
@@ -28,7 +36,11 @@ body {
 	background: #fff;
 	backface-visibility: hidden;
 	line-height: $base-line-height;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
+
+	@include breakpoint(sm) {
+		font-size: 1.4rem;
+	}
 }
 
 *,
@@ -71,6 +83,10 @@ img {
 
 .content-area {
 	height: 100%;
+}
+
+.webfont-icon {
+	transition: color $animation-speed linear;
 }
 
 .text-with-icon {

@@ -1,6 +1,7 @@
 .floor {
 	&__inner {
 		max-width: $site-max-width;
+		min-width: $site-min-width;
 		margin: 0 auto;
 		padding: 0 2rem;
 	}

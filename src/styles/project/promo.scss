@@ -1,27 +1,33 @@
 .promo-wrapper {
 	display: flex;
-	align-items: center;
+	flex-direction: column-reverse;
 	width: 100%;
 
-	@media (max-width: 978px) {
-		flex-direction: column-reverse;
+	@include breakpoint(lg) {
+		flex-direction: row;
 	}
 
 	&__content {
-		lost-column: 6/12;
+		display: flex;
+		lost-column: 12/12;
+		justify-content: center;
+		text-align: center;
 
-		@media (max-width: 978px) {
-			lost-column: 12/12;
-			text-align: center;
+		@include breakpoint(lg) {
+			lost-column: 6/12;
+			align-items: center;
+			justify-content: flex-start;
+			text-align: left;
 		}
 	}
 
 	&__hero {
-		lost-column: 6/12;
+		lost-column: 12/12;
+		margin-bottom: 3rem;
 
-		@media (max-width: 978px) {
-			lost-column: 12/12;
-			margin-bottom: 3rem;
+		@include breakpoint(lg) {
+			lost-column: 6/12;
+			margin-bottom: 0;
 		}
 
 		.promo-hero {
@@ -31,14 +37,27 @@
 }
 
 .promo-hero {
-	width: 40rem;
-	height: 40rem;
-	border: 10px solid rgba(0, 0, 0, 0.8);
+	$border--width: 10px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 27rem;
+	height: 27rem;
+	border: $border--width solid rgba(0, 0, 0, 0.8);
 	border-radius: 50%;
+	transition: all $animation-speed linear;
+
+	@include breakpoint(sm) {
+		width: 40rem;
+		height: 40rem;
+	}
 
 	&__image {
 		border-radius: 50%;
-		border: 10px solid rgba(0, 0, 0, 0.7);
+		border: $border--width solid rgba(0, 0, 0, 0.7);
+		width: 100%;
+		object-fit: cover;
 	}
 }
 
@@ -56,8 +75,17 @@
 	}
 
 	&__contacts {
+		margin-bottom: 3rem;
+
 		.list__item {
 			font-weight: 300;
+			cursor: default;
+
+			&:hover {
+				.webfont-icon {
+					color: $color--navy-blue;
+				}
+			}
 		}
 	}
 }

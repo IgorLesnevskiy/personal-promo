@@ -1,21 +1,7 @@
-// Миксин breakpoint
-//
-// Позволяет применять различные правила в зависимости от ширины окна
-//
-// $point - определяет, какую media query использовать
-// возможные значения: big, medium, small.
-//
-// ###Использование:
-// <pre>
-// @include breakpoint(small) {
-//   font-size: .7em;
-// }
-// </pre>
-
-$breakpoint-xl: 1240px !default;
-$breakpoint-lg: 1024px !default;
+$breakpoint-xl: 1200px !default;
+$breakpoint-lg: 992px !default;
 $breakpoint-md: 768px !default;
-$breakpoint-sm: 480px !default;
+$breakpoint-sm: 576px !default;
 $breakpoint-xs: 0 !default;
 
 $breakpoints: xl, lg, md, sm, xs;
@@ -25,16 +11,16 @@ $breakpoints: xl, lg, md, sm, xs;
 		@media (min-width: $breakpoint-xl) { @content; }
 	}
 	@else if $point == lg {
-		@media (max-width: $breakpoint-lg) { @content; }
+		@media (min-width: $breakpoint-lg) { @content; }
 	}
 	@else if $point == md {
-		@media (max-width: $breakpoint-md) { @content; }
+		@media (min-width: $breakpoint-md) { @content; }
 	}
 	@else if $point == sm {
-		@media (max-width: $breakpoint-sm) { @content; }
+		@media (min-width: $breakpoint-sm) { @content; }
 	}
 	@else if $point == xs {
-		@media (max-width: $breakpoint-xs) { @content; }
+		@media (min-width: $breakpoint-xs) { @content; }
 	}
 }
 
