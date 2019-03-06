@@ -1,3 +1,34 @@
 import '../styles/app.scss';
 
-import modernizer from 'modernizr';
+import modernizr from 'modernizr';
+import * as Wow from 'wow.js';
+
+const AppModule = function () {
+	return {
+		init() {
+			initAnimations();
+			initConsoleEasterEgg();
+		}
+	};
+
+	function initAnimations() {
+		new Wow().init();
+	}
+
+	function initConsoleEasterEgg() {
+		/* eslint-disable-next-line */
+		console.log(`%c 
+            _________________________________
+            < Hello! Looking for something? >
+            ---------------------------------
+                    \\   ^__^
+                     \\  (oo)\\_______
+                        (__)\\       )\\/\\
+                            ||----w |
+                            ||     ||`, 'font-family:monospace; font-size: 16px; color: #0079c1;'
+		);
+	}
+};
+
+const app = new AppModule();
+app.init();
