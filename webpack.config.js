@@ -117,7 +117,11 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
-                use: ['pug-loader']
+                use: [
+                	{
+                		loader: 'pug-loader'
+                	}
+                ]
             }
         ],
     },
@@ -148,6 +152,9 @@ module.exports = {
             return new HtmlWebpackPlugin({
                 filename: `${path.parse(page).name}.html`,
                 template: `${config.paths.src.templatesPages}/${page}`,
+	            templateParameters: {
+		            production: config.options.production
+	            },
                 inject: true
             })
         })
