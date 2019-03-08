@@ -33,7 +33,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: #000;
 	backface-visibility: hidden;
 	line-height: $base-line-height;
 	font-size: 1.2rem;
@@ -79,6 +79,14 @@ img {
 	& > * {
 		min-height: 1px;
 	}
+}
+
+.disable-drag {
+	pointer-events: none;
+}
+
+.wow {
+	visibility: hidden;
 }
 
 .content-area {

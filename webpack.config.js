@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const config = {
     options: {
@@ -63,7 +64,12 @@ module.exports = {
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: false // set to true if you want JS source maps
+                sourceMap: false,
+                uglifyOptions: {
+                    output: {
+                        comments: false,
+                    },
+                },
             }),
             new OptimizeCSSAssetsPlugin({})
         ]
@@ -126,7 +132,19 @@ module.exports = {
         ],
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        ...(config.options.production
+                ? []
+                : [new webpack.HotModuleReplacementPlugin()]
+        ),
+        ...(config.options.production
+                ? [new CompressionPlugin({
+                    algorithm: 'gzip',
+                    test: /\.js$|\.css$|\.html$/,
+                    threshold: 10240,
+                    minRatio: 0.8
+                })]
+                : []
+        ),
         new webpack.ProvidePlugin({}),
         // Хак, необходимый для корректной работы конструкции catch в промисах
         new webpack.DefinePlugin({
@@ -155,7 +173,16 @@ module.exports = {
 	            templateParameters: {
 		            production: config.options.production
 	            },
-                inject: true
+                inject: true,
+                minify: {
+                    html5: true,
+                    collapseWhitespace: true,
+                    minifyCSS: true,
+                    minifyJS: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributese: true,
+                    useShortDoctype: true
+                }
             })
         })
     ],

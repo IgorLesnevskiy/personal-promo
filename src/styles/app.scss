@@ -1,11 +1,9 @@
 // MCSS http://operatino.github.io/MCSS/
 // BEM https://ru.bem.info/
 
-//TODO чекнуть seo
-//TODO чекнуть фавикон
-//TODO проверить скорость сайта
-//TODO readme
-//TODO webp (?)
+//TODO webp
+//TODO grid layout
+//TODO Lighthouse audition
 
 /* Start
 ---------------------------------------------------------------------------------- */
@@ -18,6 +16,7 @@
 @import "base/headings";
 @import "base/label";
 @import "base/list";
+@import "base/loader.scss";
 @import "base/social-link";
 
 /* /Base */

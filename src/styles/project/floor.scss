@@ -1,4 +1,6 @@
 .floor {
+	overflow: hidden;
+
 	&__inner {
 		max-width: $site-max-width;
 		min-width: $site-min-width;

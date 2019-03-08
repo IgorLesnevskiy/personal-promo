@@ -23,7 +23,8 @@ $webfont-icon--close-envelope: "\f101";
 $webfont-icon--pointer: "\f102";
 $webfont-icon--social--fb: "\f103";
 $webfont-icon--social--github: "\f104";
-$webfont-icon--social--medium: "\f105";
+$webfont-icon--social--linkedin: "\f105";
+$webfont-icon--social--medium: "\f106";
 
 
 .webfont-icon {
@@ -49,6 +50,9 @@ $webfont-icon--social--medium: "\f105";
 .webfont-icon--social--github:before {
    content: "\f104";
 }
-.webfont-icon--social--medium:before {
+.webfont-icon--social--linkedin:before {
    content: "\f105";
+}
+.webfont-icon--social--medium:before {
+   content: "\f106";
 }

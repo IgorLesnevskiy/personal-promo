@@ -31,4 +31,7 @@ const AppModule = function () {
 };
 
 const app = new AppModule();
-app.init();
+
+window.addEventListener('load', () => {
+	app.init();
+});
