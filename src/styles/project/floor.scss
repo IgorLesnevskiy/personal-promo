@@ -10,9 +10,16 @@
 }
 
 .floor--type-promo {
-	background: url('/images/promo-bg.jpg');
 	background-size: cover;
 	position: relative;
+
+	.feature-no-webp & {
+		background: url('/images/promo-bg.jpg');
+	}
+
+	.feature-webp & {
+		background: url('/images/promo-bg.webp');
+	}
 
 	&:before {
 		content: '';

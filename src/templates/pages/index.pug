@@ -42,12 +42,14 @@ block content
                 .promo-wrapper__hero
                     .promo-hero.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.6s")
                         .promo-hero__inner
-                            img.disable-drag.promo-hero__image(
-                                src = "/images/hero-2.jpg"
-                                title = 'Igor Lesnevskiy - Frontend Developer'
-                                alt = 'Igor Lesnevskiy - Frontend Developer'
-                            )
-
+                            picture.disable-drag.promo-hero__image
+                                source(srcset="/images/hero.webp" type="image/webp")
+                                source(srcset="/images/hero.jpg" type="image/jpeg")
+                                img(
+                                    src = "/images/hero.jpg"
+                                    title = 'Igor Lesnevskiy - Frontend Developer'
+                                    alt = 'Igor Lesnevskiy - Frontend Developer'
+                                )
 
 
 

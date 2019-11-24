@@ -60,9 +60,10 @@
 	}
 
 	&__image {
+		display: block;
+		overflow: hidden;
 		border-radius: 50%;
 		border: $border--width solid rgba(0, 0, 0, 0.7);
-		display: block;
 	}
 }
 
