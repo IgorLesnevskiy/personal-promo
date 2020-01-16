@@ -1,3 +1,3 @@
-# Персональная страница
+# Personal promo site
 
 https://ilesnevskiy.dev/
