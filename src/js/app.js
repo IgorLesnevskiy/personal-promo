@@ -1,23 +1,24 @@
-import '../styles/app.scss';
+import "../styles/app.scss";
 
-import modernizr from 'modernizr';
-import * as Wow from 'wow.js';
+import modernizr from "modernizr";
+import * as Wow from "wow.js";
 
 const AppModule = function () {
-	return {
-		init() {
-			initAnimations();
-			initConsoleEasterEgg();
-		}
-	};
+    return {
+        init() {
+            initAnimations();
+            initConsoleEasterEgg();
+        },
+    };
 
-	function initAnimations() {
-		new Wow().init();
-	}
+    function initAnimations() {
+        new Wow().init();
+    }
 
-	function initConsoleEasterEgg() {
-		/* eslint-disable-next-line */
-		console.log(`%c 
+    function initConsoleEasterEgg() {
+        /* eslint-disable-next-line */
+        console.log(
+            `%c
             _________________________________
             < Hello! Looking for something? >
             ---------------------------------
@@ -25,13 +26,14 @@ const AppModule = function () {
                      \\  (oo)\\_______
                         (__)\\       )\\/\\
                             ||----w |
-                            ||     ||`, 'font-family:monospace; font-size: 16px; color: #0079c1;'
-		);
-	}
+                            ||     ||`,
+            "font-family:monospace; font-size: 16px; color: #0079c1;"
+        );
+    }
 };
 
 const app = new AppModule();
 
-window.addEventListener('load', () => {
-	app.init();
+window.addEventListener("load", () => {
+    app.init();
 });
