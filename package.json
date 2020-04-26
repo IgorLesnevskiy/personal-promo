@@ -1,4 +1,10 @@
 {
+  "name": "personal-promo",
+  "version": "0.1.0",
+  "private": false,
+  "repository": "git@github.com:IgorLesnevskiy/personal-promo.git",
+  "homepage": "/",
+
   "scripts": {
     "build:production": "yarn generateWebfont && rimraf ./dist && cross-env NODE_ENV=production webpack",
     "build:development": "yarn generateWebfont && rimraf ./dist && cross-env NODE_ENV=development webpack",
