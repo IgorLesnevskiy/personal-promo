@@ -4,16 +4,17 @@
   "private": false,
   "repository": "git@github.com:IgorLesnevskiy/personal-promo.git",
   "homepage": "/",
-
   "scripts": {
     "build:production": "yarn generateWebfont && rimraf ./dist && cross-env NODE_ENV=production webpack",
     "build:development": "yarn generateWebfont && rimraf ./dist && cross-env NODE_ENV=development webpack",
     "deploy": "yarn build:production && node bin/deploy.js",
-    "csslint": "stylelint src/styles/base src/styles/cosmetic src/styles/project src/styles/start/start.scss src/styles/app.scss --fix",
     "generateWebfont": "node bin/generateWebfont.js",
-    "jslint": "eslint ./src/js/app.js --fix",
-    "precommit": "yarn jslint && yarn csslint",
     "watch": "yarn generateWebfont && cross-env NODE_ENV=development webpack-dev-server"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "browserslist": [
     "last 2 version",
@@ -53,16 +54,14 @@
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
     "postcss-url": "^8.0.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "rimraf": "^2.6.2",
     "run-sequence": "^2.2.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "stylelint": "^9.4.0",
-    "stylelint-config-lost": "^0.0.3",
-    "stylelint-config-recommended": "^2.1.0",
-    "stylelint-scss": "^3.2.0",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webfonts-generator": "^0.4.0",
     "webfonts-loader": "^4.4.0",
