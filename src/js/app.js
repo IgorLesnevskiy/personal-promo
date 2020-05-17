@@ -1,6 +1,4 @@
 import "../styles/app.scss";
-
-import modernizr from "modernizr";
 import * as Wow from "wow.js";
 
 const AppModule = function () {
