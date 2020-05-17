@@ -1,4 +1,5 @@
 import "../styles/app.scss";
+
 import * as Wow from "wow.js";
 
 const AppModule = function () {
