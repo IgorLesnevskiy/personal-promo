@@ -1,0 +1,13 @@
+.label {
+	display: inline-block;
+	background-color: $color--navy-blue;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	font-weight: bold;
+	padding: 0.7em 2.1em;
+	border-radius: 1.42em;
+}
+
+.label--from-bottom-left {
+	border-bottom-left-radius: 0;
+}

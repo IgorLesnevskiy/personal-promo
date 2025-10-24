@@ -1,0 +1,111 @@
+/* Default
+-------------------------------------------------- */
+@import "mixines/include";
+//@import "compass/utilities/general/clearfix";
+
+@import "colors";
+@import "vars";
+@import "grid";
+@import "rreset";
+@import "fonts";
+@import "webfont";
+
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-xs: 0;
+
+$base-font-family: "Roboto", Helvetica, sans-serif;
+$alt-font-family: "Roboto", Helvetica, sans-serif;
+
+$base-line-height: 1.3;
+$base-font-size: 10px;
+$base-font-color: $color--mine-shaft;
+
+$animation-speed: 0.2s;
+
+html {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    color: $base-font-color;
+    font-weight: 400;
+}
+
+body {
+    background: #000;
+    backface-visibility: hidden;
+    line-height: $base-line-height;
+    font-size: 1.2rem;
+
+    @include breakpoint(sm) {
+        font-size: 1.4rem;
+    }
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s linear;
+
+    &:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    //flexbox hack for IE
+    min-height: 1px;
+}
+
+//flexbox hack for IE
+[class^="col-"] {
+    & > * {
+        min-height: 1px;
+    }
+}
+
+.disable-drag {
+    pointer-events: none;
+}
+
+.wow {
+    visibility: hidden;
+}
+
+.content-area {
+    height: 100%;
+}
+
+.webfont-icon {
+    transition: color $animation-speed linear;
+}
+
+.text-with-icon {
+    display: inline-flex;
+    align-items: center;
+
+    .webfont-icon:first-child {
+        margin-right: 1rem;
+    }
+
+    .webfont-icon:last-child {
+        margin-left: 1rem;
+    }
+}

@@ -1,0 +1,37 @@
+// MCSS http://operatino.github.io/MCSS/
+// BEM https://ru.bem.info/
+
+/* Start
+---------------------------------------------------------------------------------- */
+@import "start/start";
+
+/* /Start */
+
+/* Base
+---------------------------------------------------------------------------------- */
+@import "base/headings";
+@import "base/label";
+@import "base/list";
+@import "base/loader.scss";
+@import "base/social-link";
+
+/* /Base */
+
+/* Components
+---------------------------------------------------------------------------------- */
+
+/* /Components */
+
+/* Project
+---------------------------------------------------------------------------------- */
+
+@import "project/floor";
+@import "project/page";
+@import "project/promo";
+
+/* /Project */
+
+/* Cosmetic
+---------------------------------------------------------------------------------- */
+
+/* /Cosmetic */

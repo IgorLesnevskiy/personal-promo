@@ -1,0 +1,116 @@
+doctype html
+head
+	meta(charset="utf-8")
+	meta(
+	name="viewport",
+	content="width=device-width, initial-scale=1, viewport-fit=cover"
+	)
+	block title
+		title Igor Lesnevskiy - Senior Frontend developer
+	block description
+		meta(
+		name="description",
+		content="Personal page of Igor Lesnevskiy, frontend developer from the Netherlands"
+		)
+
+	//- https://realfavicongenerator.net/
+	link(rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png")
+	link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png")
+	link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png")
+	link(rel="manifest" href="/images/favicon/site.webmanifest")
+	link(rel="shortcut icon" href="/images/favicon/favicon.ico")
+	meta(name="apple-mobile-web-app-title" content="Igor Lesnevskiy - Senior Frontend developer")
+	meta(name="application-name" content="Igor Lesnevskiy - Senior Frontend developer")
+	meta(name="msapplication-TileColor" content="#f2bb79")
+	meta(name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png")
+	meta(name="msapplication-config" content="/images/favicon/browserconfig.xml")
+	meta(name="theme-color" content="#ffffff")
+
+	//- To run web application in full-screen -->
+	meta(
+	name="apple-mobile-weapp-capable",
+	content="yes"
+	)
+
+	//- Status Bar Style (see Supported Meta Tags below for available values)
+	meta(
+	name="apple-mobile-weapp-status-bar-style",
+	content="black"
+	)
+
+	meta(
+	property="og:title",
+	content="Igor Lesnevskiy - Senior Frontend developer"
+	)
+	meta(
+	property="og:description",
+	content="Personal page of Igor Lesnevskiy, frontend developer from the Netherlands"
+	)
+	meta(
+	property="og:image",
+	content="/images/shared-image.jpg"
+	)
+	meta(
+	name="twitter:card",
+	content="summary"
+	)
+	meta(
+	name="twitter:title",
+	content="Igor Lesnevskiy - Senior Frontend developer"
+	)
+	meta(
+	name="twitter:description",
+	content="Personal page of Igor Lesnevskiy, frontend developer from the Netherlands"
+	)
+	meta(
+	name="twitter:image",
+	content="/images/shared-image.jpg"
+	)
+	meta(
+	itemprop="name",
+	content="Igor Lesnevskiy - Senior Frontend developer"
+	)
+	meta(
+	itemprop="description",
+	content="Personal page of Igor Lesnevskiy, frontend developer from the Netherlands"
+	)
+	meta(
+	itemprop="image",
+	content="/images/shared-image.jpg"
+	)
+
+	script.
+		window.addEventListener('load', function(event) {
+			document.body.classList.add('loaded');
+		});
+
+	if production
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-135749416-1")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-135749416-1');
+
+	block styles
+
+body
+	.page-wrapper
+		.page-wrapper__loader
+			.preloader
+		.page-wrapper__inner
+			.page
+				.page__header
+					block header
+
+				.page__content
+					block page-title
+						.page__title Заголовок страницы
+					.content-area
+						block content
+				.page__footer
+					block footer
+	block scripts
+

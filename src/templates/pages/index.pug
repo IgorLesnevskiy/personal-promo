@@ -1,0 +1,52 @@
+extends ../includes/layout
+
+block page-title
+
+block content
+    .floor.floor--screen-height.floor--type-promo
+        .floor__inner
+            .promo-wrapper
+                .promo-wrapper__content
+                    .promo-content
+                        .promo-content__label.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.1s")
+                            .label.label--from-bottom-left Hello I'm
+                        .promo-content__name.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.2s")
+                            h1 Igor Lesnevskiy
+                        .promo-content__post.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.3s")
+                            h2 Senior Frontend Developer
+                        .promo-content__contacts
+                            ul.list
+                                li.list__item.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.4s")
+                                    .text-with-icon
+                                        i.webfont-icon.webfont-icon--close-envelope
+                                        .text
+                                            a(href = "mailto:lesnevskii.igor@gmail.com") lesnevskii.igor@gmail.com
+                                li.list__item.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.5s")
+                                    .text-with-icon
+                                        i.webfont-icon.webfont-icon--pointer
+                                        .text Amsterdam, the Netherlands
+                        .promo-content__socials.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.6s")
+                            ul.list.list--social
+                                li.list__item
+                                    a.social-link(href = 'https://linkedin.com/in/igorlesnevskiy' target="_blank")
+                                        i.webfont-icon.webfont-icon--social--linkedin
+                                li.list__item
+                                    a.social-link(href = 'https://github.com/IgorLesnevskiy' target="_blank")
+                                        i.webfont-icon.webfont-icon--social--github
+                                li.list__item
+                                    a.social-link(href = 'https://medium.com/@igorlesnevskiy' target="_blank")
+                                        i.webfont-icon.webfont-icon--social--medium
+                .promo-wrapper__hero
+                    .promo-hero.wow.fadeInUp(data-wow-duration = "0.8s" data-wow-delay="0.6s")
+                        .promo-hero__inner
+                            picture.disable-drag.promo-hero__image
+                                source(srcset="/images/hero.webp" type="image/webp")
+                                source(srcset="/images/hero.jpg" type="image/jpeg")
+                                img(
+                                    src = "/images/hero.jpg"
+                                    title = 'Igor Lesnevskiy - Senior Frontend developer'
+                                    alt = 'Igor Lesnevskiy - Senior Frontend developer'
+                                )
+
+
+
