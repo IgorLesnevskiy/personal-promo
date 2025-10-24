@@ -11,9 +11,7 @@
     "watch": "yarn generateWebfont && cross-env NODE_ENV=development webpack-dev-server"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick"
-    }
+    "hooks": {}
   },
   "browserslist": [
     "last 2 version",

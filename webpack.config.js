@@ -10,10 +10,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-
 const config = {
 	options: {
-		production: Boolean(process.env.NODE_ENV === 'production' || argv['production']),
+		production: Boolean(
+			process.env.NODE_ENV === 'production' || argv['production']
+		),
 		minifyHtml: Boolean(argv['minify-html']),
 		deploy: Boolean(argv['deploy']),
 		verbose: Boolean(argv['verbose']),
@@ -39,26 +40,33 @@ const config = {
 			styles: './dist/css',
 			fonts: './dist/fonts',
 			images: './dist/images',
-		}
-	}
+		},
+	},
 };
 
-const pugPages = fs.readdirSync(config.paths.src.templatesPages).filter(file => {
-	return !fs.lstatSync(`${config.paths.src.templatesPages}/${file}`).isDirectory()
-        && path.extname(file) === '.pug';
-});
+const pugPages = fs
+	.readdirSync(config.paths.src.templatesPages)
+	.filter((file) => {
+		return (
+			!fs
+				.lstatSync(`${config.paths.src.templatesPages}/${file}`)
+				.isDirectory() && path.extname(file) === '.pug'
+		);
+	});
 
 module.exports = {
 	mode: config.options.production ? 'production' : 'development',
-	devtool: (config.options.production) ? false : 'inline-source-map',
+	devtool: config.options.production ? false : 'inline-source-map',
 	entry: {
 		app: path.resolve(__dirname, 'src/js/app.js'),
 		vendor: path.resolve(__dirname, 'src/js/vendor.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: (config.options.production) ? 'js/[name].bundle.min.js' : 'js/[name].bundle.js',
-		pathinfo: !config.options.production
+		filename: config.options.production
+			? 'js/[name].bundle.min.js'
+			: 'js/[name].bundle.js',
+		pathinfo: !config.options.production,
 	},
 	optimization: {
 		minimizer: [
@@ -72,8 +80,8 @@ module.exports = {
 					},
 				},
 			}),
-			new OptimizeCSSAssetsPlugin({})
-		]
+			new OptimizeCSSAssetsPlugin({}),
+		],
 	},
 	module: {
 		rules: [
@@ -84,20 +92,22 @@ module.exports = {
 					loader: 'babel-loader',
 					options: {
 						cacheDirectory: config.options.cache,
-						presets: ['@babel/preset-env']
-					}
-				}
+						presets: ['@babel/preset-env'],
+					},
+				},
 			},
 			{
 				type: 'javascript/auto',
 				test: /\.modernizrrc$/,
-				use: ['modernizr-loader', 'json-loader']
+				use: ['modernizr-loader', 'json-loader'],
 			},
 			{
 				test: /\.scss$/,
 				exclude: /(node_modules)/,
 				use: [
-					(config.options.production) ? MiniCssExtractPlugin.loader : 'style-loader',
+					config.options.production
+						? MiniCssExtractPlugin.loader
+						: 'style-loader',
 					{
 						loader: 'css-loader',
 						options: {
@@ -118,44 +128,46 @@ module.exports = {
 						options: {
 							sourceMap: false,
 							sassOptions: {
-								outputStyle: 'compressed'
-							}
+								outputStyle: 'compressed',
+							},
 						},
-					}
-				]
+					},
+				],
 			},
 			{
 				test: /\.pug$/,
 				use: [
-                	{
-                		loader: 'pug-loader'
-                	}
-				]
-			}
+					{
+						loader: 'pug-loader',
+					},
+				],
+			},
 		],
 	},
 	plugins: [
 		...(config.options.production
 			? []
-			: [new webpack.HotModuleReplacementPlugin()]
-		),
+			: [new webpack.HotModuleReplacementPlugin()]),
 		...(config.options.production
-			? [new CompressionPlugin({
-				algorithm: 'gzip',
-				test: /\.js$|\.css$|\.html$/,
-				threshold: 10240,
-				minRatio: 0.8
-			})]
-			: []
-		),
+			? [
+				new CompressionPlugin({
+					algorithm: 'gzip',
+					test: /\.js$|\.css$|\.html$/,
+					threshold: 10240,
+					minRatio: 0.8,
+				}),
+			]
+			: []),
 		new webpack.ProvidePlugin({}),
 		// Хак, необходимый для корректной работы конструкции catch в промисах
 		new webpack.DefinePlugin({
-			'\.catch': '["catch"]',
-			production: config.options.production
+			'.catch': '["catch"]',
+			production: config.options.production,
 		}),
 		new MiniCssExtractPlugin({
-			filename: (config.options.production) ? 'css/[name].bundle.min.css' : 'css/[name].bundle.css',
+			filename: config.options.production
+				? 'css/[name].bundle.min.css'
+				: 'css/[name].bundle.css',
 		}),
 		new CopyPlugin([
 			{
@@ -173,9 +185,9 @@ module.exports = {
 			return new HtmlWebpackPlugin({
 				filename: `${path.parse(page).name}.html`,
 				template: `${config.paths.src.templatesPages}/${page}`,
-	            templateParameters: {
-		            production: config.options.production
-	            },
+				templateParameters: {
+					production: config.options.production,
+				},
 				inject: true,
 				minify: {
 					html5: true,
@@ -184,23 +196,25 @@ module.exports = {
 					minifyJS: true,
 					removeScriptTypeAttributes: true,
 					removeStyleLinkTypeAttributese: true,
-					useShortDoctype: true
-				}
+					useShortDoctype: true,
+				},
 			});
-		})
+		}),
 	],
 	resolve: {
 		alias: {
 			modernizr$: path.resolve(__dirname, '.modernizrrc'),
-		}
+		},
 	},
 	devServer: {
 		contentBase: [
-			...pugPages.map((page) => `${config.paths.src.templatesPages}/${page}`)
+			...pugPages.map(
+				(page) => `${config.paths.src.templatesPages}/${page}`
+			),
 		],
 		watchContentBase: true,
 		port: 9000,
 		hot: true,
-		open: true
-	}
+		open: true,
+	},
 };
